@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const API = axios.create({
-  baseURL: 'https://lily-s-lab.onrender.com',
+  baseURL: 'https://lily-s-lab.onrender.com/api',
   timeout: 15000,
   headers: {
     'Content-Type': 'application/json',
