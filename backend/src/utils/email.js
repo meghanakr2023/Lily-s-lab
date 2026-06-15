@@ -128,19 +128,21 @@ const templates = {
 };
 
 exports.sendEmail = async ({ to, subject, template, data }) => {
-  try {
-    const templateContent = templates[template] ? templates[template](data) : { html: `<p>${JSON.stringify(data)}</p>` };
+  console.log("Email sending skipped");
+  return;
+  //try {
+    //const templateContent = templates[template] ? templates[template](data) : { html: `<p>${JSON.stringify(data)}</p>` };
     
-    await transporter.sendMail({
-      from: process.env.EMAIL_FROM,
-      to,
-      subject,
-      html: templateContent.html
-    });
+    //await transporter.sendMail({
+      //from: process.env.EMAIL_FROM,
+      //to,
+      //subject,
+      //html: templateContent.html
+    //});
     
-    console.log(`✉️ Email sent to ${to}: ${subject}`);
-  } catch (error) {
-    console.error('Email error:', error);
-    throw error;
-  }
+    //console.log(`✉️ Email sent to ${to}: ${subject}`);
+  //} catch (error) {
+    //console.error('Email error:', error);
+    //throw error;
+  //}
 };
