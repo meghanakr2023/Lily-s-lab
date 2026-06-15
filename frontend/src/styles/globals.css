@@ -1,0 +1,173 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    font-family: 'DM Sans', system-ui, sans-serif;
+    background-color: #fffbf7;
+    color: #3d2c2c;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: 'Cormorant Garamond', serif;
+  }
+
+  ::selection {
+    background: #fce7f3;
+    color: #9d174d;
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #fff0f6;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #f9a8d4;
+    border-radius: 3px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #ec4899;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-gradient-to-r from-pink-400 to-purple-400 text-white font-medium py-3 px-8 rounded-full 
+           hover:shadow-petal hover:scale-105 transition-all duration-300 inline-flex items-center gap-2;
+  }
+  
+  .btn-secondary {
+    @apply border-2 border-pink-300 text-pink-600 font-medium py-3 px-8 rounded-full 
+           hover:bg-pink-50 hover:border-pink-400 transition-all duration-300 inline-flex items-center gap-2;
+  }
+  
+  .btn-outline {
+    @apply border border-pink-200 text-pink-500 py-2 px-6 rounded-full 
+           hover:bg-pink-50 transition-all duration-200 inline-flex items-center gap-2;
+  }
+  
+  .card {
+    @apply bg-white rounded-3xl shadow-sm hover:shadow-petal transition-all duration-300;
+  }
+  
+  .input-field {
+    @apply w-full px-4 py-3 bg-pink-50/50 border border-pink-100 rounded-2xl 
+           focus:outline-none focus:ring-2 focus:ring-pink-200 focus:border-pink-300 
+           placeholder-pink-300 text-gray-700 transition-all duration-200;
+  }
+  
+  .label {
+    @apply block text-sm font-medium text-pink-700 mb-1.5;
+  }
+  
+  .section-title {
+    @apply font-display text-4xl md:text-5xl font-semibold text-rose-900;
+  }
+  
+  .section-subtitle {
+    @apply font-script text-xl text-pink-400 mb-2;
+  }
+  
+  .badge {
+    @apply inline-flex items-center px-3 py-1 rounded-full text-xs font-medium;
+  }
+  
+  .badge-pink {
+    @apply badge bg-pink-100 text-pink-700;
+  }
+  
+  .badge-purple {
+    @apply badge bg-purple-100 text-purple-700;
+  }
+  
+  .badge-green {
+    @apply badge bg-green-100 text-green-700;
+  }
+  
+  .badge-red {
+    @apply badge bg-red-100 text-red-700;
+  }
+  
+  .badge-yellow {
+    @apply badge bg-yellow-100 text-yellow-700;
+  }
+
+  .glass {
+    @apply bg-white/80 backdrop-blur-md;
+  }
+  
+  .petal-bg {
+    background: linear-gradient(135deg, #fce7f3 0%, #f3e8ff 50%, #fff7ed 100%);
+  }
+  
+  .shimmer {
+    background: linear-gradient(90deg, #fce7f3 25%, #fdf2f8 50%, #fce7f3 75%);
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+  }
+
+  /* Product card hover */
+  .product-card:hover .product-card-overlay {
+    @apply opacity-100;
+  }
+  
+  .product-card:hover .product-card-img {
+    @apply scale-110;
+  }
+}
+
+/* Floating petals animation */
+.petal {
+  position: fixed;
+  top: -20px;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0;
+  animation: petalFall linear infinite;
+}
+
+/* Custom scrollbar for admin */
+.admin-scrollbar::-webkit-scrollbar {
+  width: 4px;
+}
+.admin-scrollbar::-webkit-scrollbar-thumb {
+  background: #f9a8d4;
+  border-radius: 2px;
+}
+
+/* Range input styling */
+input[type="range"] {
+  -webkit-appearance: none;
+  height: 4px;
+  background: #fce7f3;
+  border-radius: 2px;
+}
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 18px;
+  height: 18px;
+  background: linear-gradient(135deg, #f9a8d4, #c084fc);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+/* Toast customization */
+.toast-petal {
+  background: white !important;
+  border: 1px solid #fce7f3 !important;
+  border-radius: 16px !important;
+  font-family: 'DM Sans', sans-serif !important;
+}
