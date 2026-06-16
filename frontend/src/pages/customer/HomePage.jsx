@@ -7,17 +7,17 @@ import { productsAPI } from '../../utils/api';
 import ProductCard from '../../components/product/ProductCard';
 
 const CATEGORIES = [
-  { id: 'bouquets', label: 'Bouquets', emoji: '💐', desc: 'Fresh & Dried', color: 'from-pink-100 to-rose-100' },
-  { id: 'crochet-flowers', label: 'Crochet Flowers', emoji: '🧶', desc: 'Handknitted', color: 'from-purple-100 to-pink-100' },
+  { id: 'bouquets', label: 'Bouquets', emoji: '💐', desc: 'Forever Flowers', color: 'from-pink-100 to-rose-100' },
+  
   { id: 'keychains', label: 'Keychains', emoji: '🌸', desc: 'Carry Love', color: 'from-peach to-pink-100' },
   { id: 'floral-baskets', label: 'Floral Baskets', emoji: '🧺', desc: 'Gift Ready', color: 'from-green-50 to-emerald-100' },
   { id: 'home-decor', label: 'Home Decor', emoji: '🏡', desc: 'Bloom at Home', color: 'from-lavender to-purple-100' },
-  { id: 'custom', label: 'Custom Order', emoji: '✨', desc: 'Your Vision', color: 'from-yellow-50 to-peach' },
+  
 ];
 
 const TESTIMONIALS = [
   { name: 'Kshamya KR.', city: 'Bengaluru', rating: 5, text: "Ordered a custom bouquet for my anniversary and it was absolutely stunning! Lily put so much love into every petal. Will definitely order again!" },
-  { name: 'Meghana KR.', city: 'Mysuru', rating: 5, text: "The crochet flowers are SO beautiful and last forever! Such a unique gift idea. My mom absolutely loved them 💕" },
+  { name: 'Meghana KR.', city: 'Mysuru', rating: 5, text: "The flowers are SO beautiful and last forever! Such a unique gift idea. My mom absolutely loved them 💕" },
   { name: 'Harshitha S.', city: 'Mysuru', rating: 5, text: "Best floral shop I've found online. The packaging was gorgeous and the bouquet arrived perfectly fresh. Highly recommend!" },
   { name: 'Sneha KA.', city: 'Bengaluru', rating: 5, text: "Ordered keychains for all my bridesmaids — everyone was obsessed! Quality is amazing and delivery was super fast 🌸" },
 ];
@@ -119,7 +119,7 @@ export default function HomePage() {
             transition={{ delay: 0.4 }}
             className="text-gray-500 text-base md:text-lg mb-10 max-w-xl mx-auto leading-relaxed"
           >
-            Discover beautiful bouquets, crochet flowers, floral keychains and home decor — each piece lovingly handcrafted for your special moments.
+            Discover beautiful bouquets, floral keychains and home decor — each piece lovingly handcrafted for your special moments.
           </motion.p>
 
           <motion.div
@@ -136,14 +136,7 @@ export default function HomePage() {
             >
               Shop Now <FiArrowRight />
             </motion.button>
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.97 }}
-              
-              className="btn-secondary text-base px-10 py-4"
-            >
-              Create Magic ✨
-            </motion.button>
+            
           </motion.div>
 
           {/* Stats */}
@@ -206,7 +199,7 @@ export default function HomePage() {
           >
             <p className="section-subtitle">Explore</p>
             <h2 className="section-title">Our Collections</h2>
-            <p className="text-gray-400 mt-3 max-w-md mx-auto">From fresh bouquets to lasting crochet creations — find something beautiful for every occasion</p>
+            <p className="text-gray-400 mt-3 max-w-md mx-auto">From fresh bouquets to lasting creations — find something beautiful for every occasion</p>
           </motion.div>
 
           <motion.div

@@ -29,7 +29,7 @@ const productSchema = new mongoose.Schema({
   category: {
     type: String,
     required: [true, 'Category is required'],
-    enum: ['bouquets', 'crochet-flowers', 'keychains', 'floral-baskets', 'home-decor', 'custom'],
+    enum: ['bouquets', 'keychains', 'floral-baskets', 'home-decor'],
     lowercase: true
   },
   images: [{

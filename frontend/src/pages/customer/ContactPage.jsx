@@ -14,7 +14,7 @@ export default function ContactPage() {
       <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="text-center mb-12">
         <p className="section-subtitle">Get in Touch</p>
         <h1 className="section-title">Contact Us</h1>
-        <p className="text-gray-400 mt-3 max-w-md mx-auto">Have a question or want to place a custom order? We'd love to hear from you!</p>
+        <p className="text-gray-400 mt-3 max-w-md mx-auto">Have a question ? We'd love to hear from you!</p>
       </motion.div>
 
       <div className="max-w-2xl mx-auto">
@@ -58,9 +58,9 @@ export default function ContactPage() {
             <h3 className="font-serif font-semibold text-gray-800 mb-4">Quick FAQ</h3>
             <div className="space-y-3">
               {[
-                ['How long does delivery take?', '3-7 business days across India.'],
-                ['Do you deliver fresh flowers?', 'We deliver both fresh and dried/crochet arrangements.'],
-                ['Can I order same day?', 'We need min. 3 days for custom orders, 1-2 days for standard.'],
+                
+                
+                ['Can I order same day?', 'We need min. 3 days for orders'],
               ].map(([q, a]) => (
                 <div key={q} className="text-sm">
                   <p className="font-medium text-gray-700">❓ {q}</p>

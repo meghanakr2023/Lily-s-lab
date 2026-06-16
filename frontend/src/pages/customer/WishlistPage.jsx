@@ -1,19 +1,11 @@
 import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { FiHeart, FiShoppingCart, FiTrash2 } from 'react-icons/fi';
+import { FiHeart, FiTrash2, FiEye } from 'react-icons/fi';
 import toast from 'react-hot-toast';
-import { useWishlistStore, useCartStore } from '../../store';
+import { useWishlistStore } from '../../store';
 
 export default function WishlistPage() {
   const { items, removeItem } = useWishlistStore();
-  const { addItem: addToCart } = useCartStore();
-
-  const handleMoveToCart = (product) => {
-    if (product.stock === 0) { toast.error('Out of stock'); return; }
-    addToCart(product, 1);
-    removeItem(product._id);
-    toast.success('Moved to cart! 🛒');
-  };
 
   return (
     <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
@@ -63,12 +55,12 @@ export default function WishlistPage() {
                     <h3 className="font-serif font-semibold text-gray-800 text-sm line-clamp-1 mb-2">{product.title}</h3>
                     <p className="font-bold text-rose-700 mb-3">₹{price?.toLocaleString()}</p>
                     <div className="flex gap-2">
-                      <button
-                        onClick={() => handleMoveToCart(product)}
+                      <Link
+                        to={`/products/${product._id}`}
                         className="flex-1 flex items-center justify-center gap-1.5 py-2 text-xs font-medium bg-pink-100 text-pink-600 rounded-xl hover:bg-pink-500 hover:text-white transition-all"
                       >
-                        <FiShoppingCart size={12} /> Add to Cart
-                      </button>
+                        <FiEye size={12} /> View Product
+                      </Link>
                       <button
                         onClick={() => { removeItem(product._id); toast('Removed', { icon: '💔' }); }}
                         className="p-2 text-gray-300 hover:text-red-400 hover:bg-red-50 rounded-xl transition-all"

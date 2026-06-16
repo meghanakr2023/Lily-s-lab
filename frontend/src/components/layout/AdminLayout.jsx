@@ -8,7 +8,7 @@ const ADMIN_NAV = [
   { to: '/admin/dashboard', icon: FiGrid, label: 'Dashboard' },
   { to: '/admin/products', icon: FiShoppingBag, label: 'Products' },
   { to: '/admin/orders', icon: FiPackage, label: 'Orders' },
-  { to: '/admin/custom-orders', icon: FiLayers, label: 'Custom Orders' },
+ 
   { to: '/admin/customers', icon: FiUsers, label: 'Customers' },
   { to: '/admin/inventory', icon: FiBox, label: 'Inventory' },
 ];

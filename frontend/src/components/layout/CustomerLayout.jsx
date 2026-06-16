@@ -2,7 +2,7 @@ import { Outlet, Link, useNavigate, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useState, useEffect } from 'react';
 import { FiShoppingCart, FiHeart, FiUser, FiMenu, FiX, FiSearch, FiLogOut } from 'react-icons/fi';
-import { useAuthStore, useCartStore, useWishlistStore } from '../../store';
+import { useAuthStore,  useWishlistStore } from '../../store';
 import logo from "../../assets/logo.jpeg";
 
 const NAV_LINKS = [
@@ -19,7 +19,6 @@ export default function CustomerLayout() {
   const [searchOpen, setSearchOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
   const { isAuthenticated, user, logout } = useAuthStore();
-  const cartCount = useCartStore(s => s.getTotalItems());
   const wishlistCount = useWishlistStore(s => s.items.length);
   const navigate = useNavigate();
   const location = useLocation();
@@ -104,20 +103,7 @@ export default function CustomerLayout() {
                 )}
               </Link>
 
-              {/* Cart */}
-              <Link to="/cart" className="relative p-2 text-gray-500 hover:text-pink-500 transition-colors">
-                <FiShoppingCart size={20} />
-                {cartCount > 0 && (
-                  <motion.span
-                    key={cartCount}
-                    initial={{ scale: 0.5 }}
-                    animate={{ scale: 1 }}
-                    className="absolute -top-1 -right-1 bg-gradient-to-r from-pink-400 to-purple-400 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center font-medium"
-                  >
-                    {cartCount > 9 ? '9+' : cartCount}
-                  </motion.span>
-                )}
-              </Link>
+            
 
               {/* User Menu */}
               {isAuthenticated ? (
@@ -267,7 +253,7 @@ export default function CustomerLayout() {
             <div>
               <h4 className="font-semibold text-rose-800 mb-4 font-serif">Categories</h4>
               <ul className="space-y-2">
-                {['Bouquets', 'Crochet Flowers', 'Keychains', 'Floral Baskets', 'Home Decor'].map(cat => (
+                {['Bouquets', 'Keychains', 'Floral Baskets', 'Home Decor'].map(cat => (
                   <li key={cat}><Link to={`/products?category=${cat.toLowerCase().replace(' ', '-')}`} className="text-gray-500 hover:text-pink-500 text-sm transition-colors">{cat}</Link></li>
                 ))}
               </ul>

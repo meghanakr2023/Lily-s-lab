@@ -7,10 +7,6 @@ import { HelmetProvider } from 'react-helmet-async';
 import HomePage from './pages/customer/HomePage';
 import ProductsPage from './pages/customer/ProductsPage';
 import ProductDetailPage from './pages/customer/ProductDetailPage';
-import CartPage from './pages/customer/CartPage';
-import CheckoutPage from './pages/customer/CheckoutPage';
-import OrderSuccessPage from './pages/customer/OrderSuccessPage';
-
 import LoginPage from './pages/customer/LoginPage';
 import RegisterPage from './pages/customer/RegisterPage';
 import ForgotPasswordPage from './pages/customer/ForgotPasswordPage';
@@ -25,7 +21,6 @@ import AdminLogin from './pages/admin/AdminLogin';
 import AdminDashboard from './pages/admin/AdminDashboard';
 import AdminProducts from './pages/admin/AdminProducts';
 import AdminOrders from './pages/admin/AdminOrders';
-
 import AdminCustomers from './pages/admin/AdminCustomers';
 import AdminInventory from './pages/admin/AdminInventory';
 import AdminAddProduct from './pages/admin/AdminAddProduct';
@@ -34,7 +29,6 @@ import AdminAddProduct from './pages/admin/AdminAddProduct';
 import CustomerLayout from './components/layout/CustomerLayout';
 import AdminLayout from './components/layout/AdminLayout';
 
-// Guards
 import { useAuthStore } from './store';
 
 const queryClient = new QueryClient({
@@ -68,16 +62,9 @@ export default function App() {
             toastOptions={{
               className: 'toast-petal',
               duration: 3000,
-              style: {
-                fontFamily: '"DM Sans", sans-serif',
-                fontSize: '14px',
-              },
-              success: {
-                iconTheme: { primary: '#ec4899', secondary: 'white' },
-              },
-              error: {
-                iconTheme: { primary: '#e11d48', secondary: 'white' },
-              },
+              style: { fontFamily: '"DM Sans", sans-serif', fontSize: '14px' },
+              success: { iconTheme: { primary: '#ec4899', secondary: 'white' } },
+              error: { iconTheme: { primary: '#e11d48', secondary: 'white' } },
             }}
           />
           <Routes>
@@ -86,16 +73,12 @@ export default function App() {
               <Route path="/" element={<HomePage />} />
               <Route path="/products" element={<ProductsPage />} />
               <Route path="/products/:id" element={<ProductDetailPage />} />
-              <Route path="/cart" element={<CartPage />} />
-              
               <Route path="/contact" element={<ContactPage />} />
-              <Route path="/checkout" element={<ProtectedRoute><CheckoutPage /></ProtectedRoute>} />
-              <Route path="/order-success/:orderId" element={<ProtectedRoute><OrderSuccessPage /></ProtectedRoute>} />
+              <Route path="/wishlist" element={<WishlistPage />} />
               <Route path="/dashboard" element={<ProtectedRoute><DashboardPage /></ProtectedRoute>} />
               <Route path="/orders" element={<ProtectedRoute><OrdersPage /></ProtectedRoute>} />
-              <Route path="/wishlist" element={<WishlistPage />} />
             </Route>
-            
+
             {/* Auth Routes */}
             <Route path="/login" element={<GuestRoute><LoginPage /></GuestRoute>} />
             <Route path="/register" element={<GuestRoute><RegisterPage /></GuestRoute>} />
@@ -111,12 +94,10 @@ export default function App() {
               <Route path="products/add" element={<AdminAddProduct />} />
               <Route path="products/edit/:id" element={<AdminAddProduct />} />
               <Route path="orders" element={<AdminOrders />} />
-              
               <Route path="customers" element={<AdminCustomers />} />
               <Route path="inventory" element={<AdminInventory />} />
             </Route>
-            
-            {/* 404 */}
+
             <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>
         </Router>

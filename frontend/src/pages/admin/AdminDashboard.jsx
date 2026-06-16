@@ -90,7 +90,7 @@ export default function AdminDashboard() {
             <div className="space-y-2">
               {[
                 { label: 'Pending Orders', value: stats?.pendingOrders || 0, to: '/admin/orders?status=pending', color: 'text-yellow-500' },
-                { label: 'Custom Orders', value: stats?.totalCustomOrders || 0, to: '/admin/custom-orders', color: 'text-purple-500' },
+                
               ].map(item => (
                 <Link key={item.label} to={item.to}
                   className="flex items-center justify-between p-3 bg-pink-50 rounded-xl hover:bg-pink-100 transition-colors">

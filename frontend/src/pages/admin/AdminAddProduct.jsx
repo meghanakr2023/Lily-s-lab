@@ -7,7 +7,7 @@ import toast from 'react-hot-toast';
 import { useQuery, useQueryClient } from '@tanstack/react-query';
 import { productsAPI } from '../../utils/api';
 
-const CATEGORIES = ['bouquets', 'crochet-flowers', 'keychains', 'floral-baskets', 'home-decor', 'custom'];
+const CATEGORIES = ['bouquets',  'keychains', 'floral-baskets', 'home-decor'];
 
 export default function AdminAddProduct() {
   const { id } = useParams();

@@ -6,7 +6,7 @@ import { FiPlus, FiEdit2, FiTrash2, FiSearch, FiEye, FiToggleLeft, FiToggleRight
 import toast from 'react-hot-toast';
 import { productsAPI } from '../../utils/api';
 
-const CATEGORIES = ['all', 'bouquets', 'crochet-flowers', 'keychains', 'floral-baskets', 'home-decor', 'custom'];
+const CATEGORIES = ['all', 'bouquets', 'keychains', 'floral-baskets', 'home-decor'];
 
 export default function AdminProducts() {
   const [search, setSearch] = useState('');

@@ -9,11 +9,11 @@ import ProductCard from '../../components/product/ProductCard';
 const CATEGORIES = [
   { value: 'all', label: 'All Products', emoji: '🌸' },
   { value: 'bouquets', label: 'Bouquets', emoji: '💐' },
-  { value: 'crochet-flowers', label: 'Crochet Flowers', emoji: '🧶' },
+  
   { value: 'keychains', label: 'Keychains', emoji: '🔑' },
   { value: 'floral-baskets', label: 'Floral Baskets', emoji: '🧺' },
   { value: 'home-decor', label: 'Home Decor', emoji: '🏡' },
-  { value: 'custom', label: 'Custom', emoji: '✨' },
+  
 ];
 
 const SORT_OPTIONS = [
